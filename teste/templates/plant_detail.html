@@ -1,0 +1,69 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Tree Detail Page</h1>
+    <br>
+    <div>
+        <div class="row">
+            <div class="col">
+              <b>Name:</b>
+            </div>
+            <div class="col">
+                {{ object.tree.name }}
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            <b>Scientific Name:</b>
+            </div>
+            <div class="col">
+                {{ object.tree.scientific_name }}
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            <b>Planted at:</b>
+            </div>
+            <div class="col">
+                {{ object.planted_at }}
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            <b>Latitude:</b>
+            </div>
+            <div class="col">
+                {{ object.latitude }}
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            <b>Longitude:</b>
+            </div>
+            <div class="col">
+                {{ object.longitude }}
+            </div>
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+    </div>
+{% endblock content %}

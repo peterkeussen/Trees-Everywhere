@@ -1,0 +1,15 @@
+<!-- templates/profile.html -->
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Profile Page</h1>
+    <br>
+    <form  action="{{ request.path }}" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button type="submit">Save</button>     
+    </form>
+{% endblock content %}

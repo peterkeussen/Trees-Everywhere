@@ -1,0 +1,38 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>List Trees Planted by Account</h3> 
+    {% comment %} 
+    <br>
+    <select name="account" id="filter_account">
+        {% for acc in object_list %}
+            {% ifchanged acc.account %}
+                <option value="{{ acc.account.id }}">{{ acc.account }}</option>
+            {% endifchanged %}            
+        {% endfor %}
+    </select>
+    <br> 
+    {% endcomment %}
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class='table table-striped'>
+            <tr>
+                <th>Account</th>
+                <th>Plant Name</th>
+                <th>Planted At</th>
+            </tr>
+            {% for planted in object_list %}
+                <tr>
+                    <td>{{ planted.account }}</td>
+                    <td>{{ planted.tree.name }}</td>
+                    <td>{{ planted.planted_at }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+            {% include "pagination.html" %}
+        </div>
+    </div>
+    
+{% endblock content %}

@@ -1,0 +1,13 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Tree Register Page</h1>
+    <br>
+    <form  action="{{ request.path }}" method="post">
+        {% csrf_token %}
+        {% crispy form %}
+        {% comment %} <button type="submit">Save</button> {% endcomment %}
+    </form>
+{% endblock content %}

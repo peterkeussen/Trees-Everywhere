@@ -1,0 +1,29 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>List Trees Planted</h3>
+    <br>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class='table table-striped'>
+            <tr>
+                <th>Plant Name</th>
+                <th>Planted At</th>
+                {% comment %} <th>User</th>
+                <th>Account</th> {% endcomment %}
+            </tr>
+            {% for planted in object_list %}
+                <tr>
+                    <td><a href="{% url 'tree_detail2' planted.pk %}">{{ planted.tree.name }}</a></td>
+                    <td>{{ planted.planted_at }}</td>
+                    {% comment %} <td>{{ planted.user }}</td>
+                    <td>{{ planted.account }}</td> {% endcomment %}
+                </tr>
+            {% endfor %}
+            </table>
+            {% include "pagination.html" %}
+        </div>
+    </div>
+    
+{% endblock content %}
